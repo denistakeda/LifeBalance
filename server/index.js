@@ -2,7 +2,6 @@ import express from 'express';
 import webpack from 'webpack';
 import { isDebug } from '../config/app';
 import { connect } from './db';
-//import initPassport from './init/passport';
 import initExpress from './init/express';
 import initRoutes from './init/routes';
 import renderMiddleware from './render/middleware';

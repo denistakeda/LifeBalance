@@ -11,7 +11,6 @@ export const create = R.pipe(
     user: {
       id: user._id,
       email: user.email,
-      name: user.name,
     },
     token: jwt.sign(user._id, SECRET_KEY),
   }))

@@ -16,7 +16,6 @@ const signUpPayload = new GraphQLObjectType({
 
 const signUp = {
   args: {
-    name: {type: new GraphQLNonNull(GraphQLString)},
     email: {type: new GraphQLNonNull(GraphQLString)},
     password: {type: new GraphQLNonNull(GraphQLString)},
   },

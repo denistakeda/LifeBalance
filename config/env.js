@@ -8,3 +8,5 @@ export const DB_TYPE = process.env.DB_TYPE || DB_TYPES.MONGO;
 
 export const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || null;
 
+export const SECRET_KEY = process.env.SECRET_KEY || "Super Secret";
+

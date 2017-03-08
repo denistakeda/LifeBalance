@@ -1,6 +1,5 @@
 # Life Balance
-
-TODO: Add description
+This repo based on [reactGo](https://github.com/reactGo/reactGo) boilerplate
 
 ## Developing
 ### Setup

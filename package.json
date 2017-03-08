@@ -118,5 +118,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "babel": {
+
   }
 }

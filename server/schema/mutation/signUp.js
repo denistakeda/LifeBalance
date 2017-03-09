@@ -19,7 +19,7 @@ const signUp = {
     email: {type: new GraphQLNonNull(GraphQLString)},
     password: {type: new GraphQLNonNull(GraphQLString)},
   },
-  resolve: UserController.create,
+  resolve: UserController.signUp,
   type: signUpPayload,
 };
 

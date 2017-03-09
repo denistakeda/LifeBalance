@@ -9,11 +9,11 @@ const generateToken = user => ({
   token: jwt.sign(user._id, SECRET_KEY)
 });
 
-export const create = R.pipe(
+export const signUp = (_, args) => R.pipe(
   // TODO: verify the args
-  (_, args) => User.create(args),
+  () => User.create(args),
   then(generateToken)
-);
+)(args);
 
 export const signIn = (_, args) => R.pipe(
   () => User.findOne({email: args.email}),

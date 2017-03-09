@@ -5,6 +5,8 @@
 
 import bcrypt from 'bcrypt-nodejs';
 import mongoose from 'mongoose';
+import R from 'ramda';
+import {PromiseConstructor} from '../../../utils/constructors';
 
 // Other oauthtypes to be added
 
@@ -40,18 +42,24 @@ UserSchema.pre('save', encryptPassword);
  Defining our own custom document instance method
  */
 UserSchema.methods = {
-  comparePassword(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-      if (err) return cb(err);
-      return cb(null, isMatch);
-    });
-  }
+
 };
 
 /**
  * Statics
  */
 
-UserSchema.statics = {};
+UserSchema.statics = {
+  comparePassword: R.curry(
+    (candidatePassword, user) => PromiseConstructor(
+      (resolve, reject) =>
+        bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
+          if (err) return reject(err);
+          if (!isMatch) return reject('Incorrect email or password');
+          return resolve(user);
+        })
+    )
+  ),
+};
 
 export default mongoose.model('User', UserSchema);

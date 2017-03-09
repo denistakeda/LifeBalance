@@ -6,21 +6,21 @@ import {
 import userType from '../object-types/user-type';
 import * as UserController from '../../db/mongo/controllers/users';
 
-const signUpPayload = new GraphQLObjectType({
-  name: 'SignUpPayload',
+const signInPayload = new GraphQLObjectType({
+  name: 'SignInPayload',
   fields: {
     user: {type: userType},
     token: {type: GraphQLString},
   }
 });
 
-const signUp = {
+const signIn = {
   args: {
     email: {type: new GraphQLNonNull(GraphQLString)},
     password: {type: new GraphQLNonNull(GraphQLString)},
   },
-  resolve: UserController.signUp,
-  type: signUpPayload,
+  resolve: UserController.signIn,
+  type: signInPayload,
 };
 
-export default signUp;
+export default signIn;

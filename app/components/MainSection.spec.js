@@ -1,8 +1,8 @@
 import React from 'react';
 import expect from 'expect';
 import { mount } from 'enzyme';
-import MainSection from '../../components/MainSection';
-import TopicItem from '../../components/TopicItem';
+import MainSection from './MainSection';
+import TopicItem from './TopicItem';
 
 const emptyData = [];
 const topicItemData = [{

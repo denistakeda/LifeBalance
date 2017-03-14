@@ -4,20 +4,16 @@ import {
     Text,
     View
 } from 'react-native';
-import { Actions } from 'react-native-router-flux'; // New code
+import {colorBlack, normalTextSize} from './StyleConst';
 
-const SignUp = () => {
-    return (
-        <View style={styles.container}>
-            <Text
-                style={styles.welcome}
-                onPress={() => Actions.gray()} // New Code
-            >
-                SignUp Screen
-            </Text>
-        </View>
-    );
-}
+const SignUp = () => (
+    <View style={styles.container}>
+        <Text style={styles.welcome}>
+            SignUp Screen
+        </Text>
+    </View>
+);
+SignUp.displayName = 'SignUp';
 
 const styles = StyleSheet.create({
     container: {
@@ -27,10 +23,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#808080',
     },
     welcome: {
-        fontSize: 20,
+        fontSize: normalTextSize,
         textAlign: 'center',
         margin: 10,
-        color: '#ffffff',
+        color: colorBlack,
     },
 });
 

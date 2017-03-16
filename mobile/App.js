@@ -1,11 +1,5 @@
 import React from 'react';
 import {Router} from 'react-native-router-flux';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
 
 import scenes from './Scenes';
 

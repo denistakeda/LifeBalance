@@ -1,4 +1,5 @@
 import React from 'react';
+import {Router} from 'react-native-router-flux';
 import {
   AppRegistry,
   StyleSheet,
@@ -6,13 +7,9 @@ import {
   View
 } from 'react-native';
 
-import Routing from './Router';
+import scenes from './Scenes';
 
-const App = () => {
-    return (
-        <Routing/>
-    );
-}
+const App = () => <Router scenes={scenes} />;
 App.displayName = 'App';
 
 export default App;

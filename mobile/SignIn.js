@@ -5,7 +5,6 @@ import {
     View
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import Const from './StyleConst';
 import {colorWhite, normalTextSize} from './StyleConst';
 
 const SignIn = () => (

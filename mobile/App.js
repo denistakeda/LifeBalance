@@ -6,11 +6,11 @@ import {
   View
 } from 'react-native';
 
-import _Router from './Router';
+import Routing from './Router';
 
 const App = () => {
     return (
-        <_Router/>
+        <Routing/>
     );
 }
 App.displayName = 'App';

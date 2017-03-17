@@ -1,21 +1,21 @@
 import R from 'ramda';
 import User from '../models/user';
 import {then, catchErr} from '../../../utils/invokers';
+import {promisify} from '../../../utils/monads';
 import jwt from 'jsonwebtoken';
 import {SECRET_KEY} from '../../../../config/env';
 
 export const extractUserMiddleware = (req, res, next) => R.pipe(
   getToken,
   getUserIdByToken,
-  userId => User.findById(userId),
+  then(userId => User.findById(userId)),
   then(
     user => {
-      if (!user) next("Wrong token");
       req.user = user;
       next();
     }
   ),
-  catchErr(err => next(err))
+  catchErr(err => next())
 )(req);
 
 export const signUp = (_, args) => R.pipe(
@@ -39,6 +39,6 @@ const generateToken = user => ({
   token: jwt.sign(user._id.toString(), SECRET_KEY)
 });
 
-const getUserIdByToken = token => jwt.verify(token, SECRET_KEY);
+const getUserIdByToken = promisify(token => jwt.verify(token, SECRET_KEY));
 
 const getToken = req => req.get('token');

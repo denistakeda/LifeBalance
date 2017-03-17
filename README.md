@@ -12,6 +12,8 @@ This repo is based on [reactGo](https://github.com/reactGo/reactGo) boilerplate.
 - `npm run dev` — start server with live code reloading
 - `npm start` — start server
 
+[GraphiQL](https://github.com/graphql/graphiql) default path: [http://localhost:3000/graphql](http://localhost:3000/graphql) 
+
 ### Mobile
 - `npm run mobile` — start react-native packager
 - `react-native run-ios` — open app in iOS emulator

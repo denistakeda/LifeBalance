@@ -4,7 +4,7 @@ import {
     Text,
     View
 } from 'react-native';
-import {colorBlack, normalTextSize} from './StyleConst';
+import { colorWhite, colorGrey, normalTextSize } from './StyleConst';
 
 const SignUp = () => (
     <View style={styles.container}>
@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#808080',
+        backgroundColor: colorGrey,
     },
     welcome: {
         fontSize: normalTextSize,
         textAlign: 'center',
         margin: 10,
-        color: colorBlack,
+        color: colorWhite,
     },
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Actions, Scene} from 'react-native-router-flux';
+import { Actions, Scene } from 'react-native-router-flux';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
@@ -9,10 +9,9 @@ const scenes = Actions.create(
                component={SignIn}
                title="SignIn"
                initial />
-        <Scene
-            key="signup"
-            component={SignUp}
-            title="SignUp" />
+        <Scene key="signup"
+               component={SignUp}
+               title="SignUp" />
     </Scene>
 );
 

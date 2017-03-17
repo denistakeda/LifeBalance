@@ -1,9 +1,9 @@
 import R from 'ramda';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.model';
-import {then, catchErr} from '../../../../utils/invokers';
-import {promisify} from '../../../../utils/monads';
-import {SECRET_KEY} from '../../../../../config/env';
+import {then, catchErr} from '../../../utils/invokers';
+import {promisify} from '../../../utils/monads';
+import {SECRET_KEY} from '../../../../config/env';
 
 // Private part
 

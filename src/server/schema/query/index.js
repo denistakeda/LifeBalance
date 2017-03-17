@@ -3,7 +3,7 @@ import {
   GraphQLString
 } from 'graphql';
 import userType from '../object-types/user-type';
-import {me} from '../../db/mongo/controllers/users.controller';
+import {me} from '../../db/controllers/users.controller';
 
 const query = new GraphQLObjectType({
   name: 'Query',

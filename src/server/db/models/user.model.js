@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt-nodejs';
 import mongoose from 'mongoose';
 import R from 'ramda';
-import {promiseConstructor} from '../../../../utils/constructors';
+import {promiseConstructor} from '../../../utils/constructors';
 
 // Other oauthtypes to be added
 
@@ -54,7 +54,7 @@ UserSchema.statics = {
           return resolve(user);
         })
     )
-  ),
+  )
 };
 
 export default mongoose.model('User', UserSchema);

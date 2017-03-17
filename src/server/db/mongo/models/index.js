@@ -1,3 +1,3 @@
 export default function loadModels() {
-  require('./user.model.js');
+  require('./user.model');
 }

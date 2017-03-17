@@ -1,12 +1,7 @@
-/**
- * Defining a User Model in mongoose
- * Code modified from https://github.com/sahat/hackathon-starter
- */
-
 import bcrypt from 'bcrypt-nodejs';
 import mongoose from 'mongoose';
 import R from 'ramda';
-import {PromiseConstructor} from '../../../utils/constructors';
+import {promiseConstructor} from '../../../../utils/constructors';
 
 // Other oauthtypes to be added
 
@@ -51,7 +46,7 @@ UserSchema.methods = {
 
 UserSchema.statics = {
   comparePassword: R.curry(
-    (candidatePassword, user) => PromiseConstructor(
+    (candidatePassword, user) => promiseConstructor(
       (resolve, reject) =>
         bcrypt.compare(candidatePassword, user.password, (err, isMatch) => {
           if (err) return reject(err);

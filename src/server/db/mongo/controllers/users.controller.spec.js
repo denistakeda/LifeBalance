@@ -1,5 +1,5 @@
-import * as UsersController from './users.controller';
 import {assert} from 'chai';
+import * as UsersController from './users.controller';
 
 describe('user.controller', () => {
   describe('me', () => {
@@ -7,5 +7,5 @@ describe('user.controller', () => {
       const user = 'mock-user';
       assert.equal(UsersController.me(null, null, {user}), user);
     });
-  })
+  });
 });

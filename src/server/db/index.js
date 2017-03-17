@@ -1,22 +1,11 @@
-import { DB_TYPE } from '../../../config/env';
-import { DB_TYPES } from '../../../config/dbTypes';
+import connect from './connect';
+import controllers from './controllers';
+import passport from './passport';
+import session from './session';
 
-let dbConfig = null;
-
-/* use inline requires for conditional loading */
-switch (DB_TYPE) {
-  case DB_TYPES.MONGO:
-    dbConfig = require('./mongo/index').default;
-    break;
-  case DB_TYPES.NONE:
-    dbConfig = require('./none/index').default;
-    break;
-  default:
-    throw new Error(`No database type '${DB_TYPE}' found`);
-}
-
-export const connect = dbConfig.connect;
-export const controllers = dbConfig.controllers;
-export const passport = dbConfig.passport;
-export const session = dbConfig.session;
-
+export {
+  connect,
+  controllers,
+  passport,
+  session
+};

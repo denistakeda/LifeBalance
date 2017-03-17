@@ -4,7 +4,7 @@ import {
   GraphQLObjectType,
 } from 'graphql';
 import userType from '../object-types/user-type';
-import * as UserController from '../../db/mongo/controllers/users.controller';
+import * as UserController from '../../db/controllers/users.controller';
 
 const signUpPayload = new GraphQLObjectType({
   name: 'SignUpPayload',

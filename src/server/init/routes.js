@@ -1,6 +1,6 @@
 import graphqlHTTP from 'express-graphql';
 import schema from '../schema/schema';
-import {extractUserMiddleware} from '../db/mongo/controllers/users.controller';
+import {extractUserMiddleware} from '../db/controllers/users.controller';
 
 export default (app) => {
   app.use(

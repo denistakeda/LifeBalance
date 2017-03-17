@@ -5,7 +5,7 @@ import {
     View
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import {colorWhite, normalTextSize} from './StyleConst';
+import { colorBlack, normalTextSize } from './StyleConst';
 
 const SignIn = () => (
     <View style={styles.container}>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         fontSize: normalTextSize,
         textAlign: 'center',
         margin: 10,
-        color: colorWhite,
+        color: colorBlack,
     },
 });
 

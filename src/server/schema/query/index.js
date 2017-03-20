@@ -1,15 +1,15 @@
 import {
   GraphQLObjectType,
 } from 'graphql';
-import viewerType from '../object-types/viewer-type';
-import {verifyUser} from '../../db/controllers/users.controller';
+import userType from '../object-types/user-type';
+import {getViewer} from '../../db/controllers/users.controller';
 
 const query = new GraphQLObjectType({
   name: 'Query',
   fields: {
-    Viewer: {
-      type: viewerType,
-      resolve: verifyUser,
+    viewer: {
+      type: userType,
+      resolve: getViewer,
     },
   }
 });

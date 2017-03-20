@@ -43,8 +43,6 @@ export const signIn = (_, args) => R.pipe(
   then(generateToken)
 )(args);
 
-export const me = (_, __, context) => context.user;
-
-export const verifyUser = (_, __, context) => {
-  return context.user ? Promise.resolve({}) : Promise.reject('User is not defined. Please sign-in');
+export const getViewer = (_, __, context) => {
+  return context.user ? Promise.resolve(context.user) : Promise.reject('User is not defined. Please sign in.');
 };

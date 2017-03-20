@@ -44,3 +44,7 @@ export const signIn = (_, args) => R.pipe(
 )(args);
 
 export const me = (_, __, context) => context.user;
+
+export const verifyUser = (_, __, context) => {
+  return context.user ? Promise.resolve({}) : Promise.reject('User is not defined. Please sign-in');
+};

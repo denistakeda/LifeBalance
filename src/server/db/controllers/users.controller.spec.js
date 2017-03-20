@@ -8,4 +8,16 @@ describe('user.controller', () => {
       assert.equal(UsersController.me(null, null, {user}), user);
     });
   });
+
+  describe('verifyUser', () => {
+    it('should return resolved promise when user is defined', (done) => {
+      UsersController.verifyUser(null, null, {user: 'mock-user'})
+        .then(() => done());
+    });
+
+    it('should return rejected promise when user is not defined', (done) => {
+      UsersController.verifyUser(null, null, {})
+        .catch(() => done());
+    });
+  });
 });

@@ -23,7 +23,7 @@ export const extractUserMiddleware = (req, res, next) => R.pipe(
   getUserIdByToken,
   then(userId => User.findById(userId)),
   then(
-    user => {
+    (user) => {
       req.user = user; // eslint-disable-line no-param-reassign
       next();
     }

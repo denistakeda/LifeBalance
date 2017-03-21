@@ -1,5 +1,5 @@
 
-export const promisify = (cb) => (...args) => { // eslint-disable-line import/prefer-default-export
+export const promisify = cb => (...args) => { // eslint-disable-line import/prefer-default-export
   try {
     return Promise.resolve(cb(...args));
   } catch (err) {

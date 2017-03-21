@@ -7,7 +7,6 @@ import flash from 'express-flash';
 import methodOverride from 'method-override';
 import gzip from 'compression';
 import helmet from 'helmet';
-import unsupportedMessage from '../db/unsupportedMessage';
 import { sessionSecret } from '../../../config/secrets';
 import { ENV } from '../../../config/env';
 import { session as dbSession } from '../db';
@@ -54,13 +53,6 @@ export default (app) => {
   //          cookie: Please note that secure: true is a recommended option.
   //                  However, it requires an https-enabled website, i.e., HTTPS is necessary for secure cookies.
   //                  If secure is set, and you access your site over HTTP, the cookie will not be set.
-  let sessionStore = null;
-  if (!dbSession) {
-    console.warn(unsupportedMessage('session'));
-  } else {
-    sessionStore = dbSession();
-  }
-
   const sess = {
     resave: false,
     saveUninitialized: false,
@@ -73,7 +65,7 @@ export default (app) => {
       httpOnly: true,
       secure: false,
     },
-    store: sessionStore
+    store: dbSession()
   };
 
   console.log('--------------------------');
@@ -86,7 +78,6 @@ export default (app) => {
     sess.cookie.secure = true; // Serve secure cookies
   }
   console.log('--------------------------');
-
 
   app.use(session(sess));
 

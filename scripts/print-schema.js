@@ -2,8 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import {graphql} from 'graphql';
 import {introspectionQuery, printSchema} from 'graphql/utilities';
-
-// Assume your schema is in ../data/schema
 import schema from '../src/server/schema/schema';
 
 const yourSchemaPath = path.join(__dirname, '../data/schema');

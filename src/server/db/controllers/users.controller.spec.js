@@ -15,9 +15,12 @@ describe('user.controller', () => {
         .then(() => done());
     });
 
-    it('should return rejected promise when user is not defined', (done) => {
+    it('should return resolved promise with null when user is not defined', (done) => {
       UsersController.verifyUser(null, null, {})
-        .catch(() => done());
+        .then((user) => {
+          assert.isNull(user);
+          done();
+        });
     });
   });
 });

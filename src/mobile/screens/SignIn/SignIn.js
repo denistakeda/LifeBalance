@@ -4,8 +4,10 @@ import {
   Text,
   View
 } from 'react-native';
+import Relay from 'react-relay';
 import { Actions } from 'react-native-router-flux';
-import { colorBlack, normalTextSize } from './config/StyleConst';
+import { colorBlack, normalTextSize } from '../../config/StyleConst';
+import AppRoutes from '../../AppRoutes';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SignIn = () => (
+const SignInComponent = () => (
   <View style={styles.container}>
     <Text
       style={styles.welcome}
@@ -32,6 +34,26 @@ const SignIn = () => (
     </Text>
   </View>
 );
-SignIn.displayName = 'SignIn';
+
+SignInComponent.displayName = 'SignInComponent';
+
+const SignInConnected = Relay.createContainer(SignInComponent, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on Viewer {
+        user {
+          id
+          email
+        }
+      }
+    `
+  },
+});
+
+const SignIn = () => (
+  <Relay.RootContainer
+    Component={SignInConnected}
+    route={new AppRoutes()} />
+);
 
 export default SignIn;

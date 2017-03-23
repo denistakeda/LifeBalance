@@ -92,7 +92,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-helmet": "^3.2.2",
-    "react-native": "0.41.2",
+    "react-native": "0.42.3",
     "react-native-router-flux": "^3.38.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",

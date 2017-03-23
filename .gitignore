@@ -1,11 +1,9 @@
-node_modules
-npm-debug.log
 .tmp
-.idea
 public
 compiled
 .swp
 .vscode
+yarn.lock
 
 ### Node ###
 # Logs
@@ -80,5 +78,26 @@ xcuserdata
 *.xccheckout
 *.moved-aside
 DerivedData
+*.hmap
+*.ipa
 *.xcuserstate
-yarn.lock
+project.xcworkspace
+
+
+### Android/IntelliJ ###
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+
+### BUCK ###
+buck-out/
+\.buckd/
+*.keystore
+
+### fastlane ###
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots

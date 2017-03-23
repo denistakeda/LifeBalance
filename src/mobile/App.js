@@ -11,7 +11,6 @@ import scenes from './Scenes';
 import {BACKEND_URL} from '../../config/env';
 import {getToken} from './services/AuthorizationService';
 
-
 Relay.injectNetworkLayer(new RelayNetworkLayer([
   urlMiddleware({
     url: () => BACKEND_URL,

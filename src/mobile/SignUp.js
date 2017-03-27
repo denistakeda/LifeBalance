@@ -4,7 +4,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { colorWhite, greyColor, normalTextSize } from './config/StyleConst';
+import { backgroundColor, greyColor, normalTextSize } from './config/StyleConst';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     fontSize: normalTextSize,
     textAlign: 'center',
     margin: 10,
-    color: colorWhite,
+    color: backgroundColor,
   },
 });
 

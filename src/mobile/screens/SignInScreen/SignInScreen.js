@@ -31,13 +31,7 @@ const styles = StyleSheet.create({
     margin: 10,
     color: mainTextColor,
   },
-  emailInput: {
-    height: 40,
-    borderColor: greyColor,
-    borderWidth: 1,
-    marginBottom: 10,
-  },
-  passwordInput: {
+  input: {
     height: 40,
     borderColor: greyColor,
     borderWidth: 1,
@@ -81,13 +75,13 @@ export class SignInComponent extends React.Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>Sign In</Text>
         <TextInput
-          style={styles.emailInput}
+          style={styles.input}
           onChangeText={email => this.setState({email})}
           value={this.state.email}
           keyboardType={'email-address'}
         />
         <TextInput
-          style={styles.passwordInput}
+          style={styles.input}
           onChangeText={password => this.setState({password})}
           value={this.state.password}
           secureTextEntry

@@ -5,6 +5,7 @@ import {
   RelayNetworkLayer,
   urlMiddleware,
   authMiddleware,
+  loggerMiddleware,
 } from 'react-relay-network-layer';
 
 import scenes from './Scenes';
@@ -20,7 +21,8 @@ Relay.injectNetworkLayer(new RelayNetworkLayer([
     allowEmptyToken: true,
     header: 'token',
     prefix: '',
-  })
+  }),
+  loggerMiddleware(),
 ]));
 
 const App = () => <Router scenes={scenes} />;

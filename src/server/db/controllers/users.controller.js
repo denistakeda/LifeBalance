@@ -40,7 +40,7 @@ export const signUp = (_, args) => R.pipe(
 export const signIn = ({email, password}) => R.pipe(
   () => User.findOne({email}),
   then(user => User.comparePassword(password, user)),
-  then(user => generateToken(user))
+  then(generateToken)
 )();
 
 export const me = (_, __, context) => context.user;

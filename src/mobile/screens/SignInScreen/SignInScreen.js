@@ -7,7 +7,13 @@ import {
 } from 'react-native';
 import Relay from 'react-relay';
 import { Actions } from 'react-native-router-flux';
-import { colorBlack, normalTextSize } from '../../config/StyleConst';
+import {
+  mainTextColor,
+  normalTextSize,
+  greyColor,
+  errorColor,
+  linkColor,
+} from '../../config/StyleConst';
 import AppRoutes from '../../AppRoutes';
 import SignInMutation from '../../mutations/SignInMutation';
 import { setToken } from '../../services/AuthorizationService';
@@ -23,29 +29,29 @@ const styles = StyleSheet.create({
     fontSize: normalTextSize,
     textAlign: 'center',
     margin: 10,
-    color: colorBlack,
+    color: mainTextColor,
   },
   emailInput: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: greyColor,
     borderWidth: 1,
     marginBottom: 10,
   },
   passwordInput: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: greyColor,
     borderWidth: 1,
     marginBottom: 10,
   },
   signInButton: {
-    color: 'blue',
+    color: linkColor,
   },
   errorText: {
-    color: 'red',
+    color: errorColor,
     marginBottom: 10,
   },
   signUp: {
-    color: 'blue',
+    color: linkColor,
   }
 });
 

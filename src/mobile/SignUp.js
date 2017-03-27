@@ -4,14 +4,14 @@ import {
   Text,
   View
 } from 'react-native';
-import { colorWhite, colorGrey, normalTextSize } from './config/StyleConst';
+import { colorWhite, greyColor, normalTextSize } from './config/StyleConst';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colorGrey,
+    backgroundColor: greyColor,
   },
   welcome: {
     fontSize: normalTextSize,

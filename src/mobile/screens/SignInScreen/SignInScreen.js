@@ -84,6 +84,7 @@ export class SignInComponent extends React.Component {
           style={styles.emailInput}
           onChangeText={email => this.setState({email})}
           value={this.state.email}
+          keyboardType={'email-address'}
         />
         <TextInput
           style={styles.passwordInput}

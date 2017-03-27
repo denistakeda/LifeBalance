@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   }
 });
 
-class SignInComponent extends React.Component {
+export class SignInComponent extends React.Component {
 
   constructor() {
     super();
@@ -89,7 +89,7 @@ class SignInComponent extends React.Component {
           !!this.state.error &&
           <Text style={styles.errorText}>{this.state.error}</Text>
         }
-        <Text onPress={this.signIn} style={styles.signInButton}>Sign In</Text>
+        <Text onPress={this.signIn} style={styles.signInButton} testID={'signInButton'}>Sign In</Text>
 
         <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signup()}>sign up</Text></Text>
       </View>

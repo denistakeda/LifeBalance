@@ -37,11 +37,11 @@ export const signUp = (_, args) => R.pipe(
   then(generateToken)
 )(args);
 
-export const signIn = (_, args) => R.pipe(
-  () => User.findOne({email: args.email}),
-  then(User.comparePassword(args.password)),
+export const signIn = ({email, password}) => R.pipe(
+  () => User.findOne({email}),
+  then(user => User.comparePassword(password, user)),
   then(generateToken)
-)(args);
+)();
 
 export const me = (_, __, context) => context.user;
 

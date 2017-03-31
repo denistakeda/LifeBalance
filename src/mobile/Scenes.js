@@ -2,7 +2,7 @@ import React from 'react';
 import { Actions, Scene } from 'react-native-router-flux';
 import SignInScreen from './screens/SignInScreen/SignInScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-import SignUp from './SignUp';
+import SignUpScreen from './screens/SignUpScreen/SignUpScreen';
 
 const scenes = Actions.create(
   <Scene key="root">
@@ -13,7 +13,7 @@ const scenes = Actions.create(
       initial />
     <Scene
       key="signup"
-      component={SignUp}
+      component={SignUpScreen}
       title="SignUp" />
     <Scene
       key="home"

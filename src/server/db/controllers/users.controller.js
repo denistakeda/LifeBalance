@@ -31,9 +31,8 @@ export const extractUserMiddleware = (req, res, next) => R.pipe(
   catchErr(() => next())
 )(req);
 
-export const signUp = (_, args) => R.pipe(
-  // TODO: verify the args
-  () => User.create(args),
+export const signUp = ({email, password}) => R.pipe(
+  () => User.create({email, password}),
   then(generateToken)
 )(args);
 

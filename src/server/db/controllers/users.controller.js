@@ -34,7 +34,7 @@ export const extractUserMiddleware = (req, res, next) => R.pipe(
 export const signUp = ({email, password}) => R.pipe(
   () => User.create({email, password}),
   then(generateToken)
-)(args);
+)();
 
 export const signIn = ({email, password}) => R.pipe(
   () => User.findOne({email}),

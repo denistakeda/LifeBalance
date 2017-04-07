@@ -62,7 +62,7 @@ export class SignUpComponent extends React.Component {
       new SignUpMutation({email: this.state.email, password: this.state.password}),
       {
         onSuccess: (response) => {
-          setToken(response.signIn.token);
+          setToken(response.signUp.token);
           Actions.home();
         },
         onFailure: () => this.setState({error: 'Server error'})

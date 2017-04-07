@@ -6,7 +6,7 @@ import {
   TextInput,
 } from 'react-native';
 import Relay from 'react-relay';
-import { Actions } from 'react-native-router-flux';
+import { Actions, ActionConst } from 'react-native-router-flux';
 import {
   mainTextColor,
   normalTextSize,
@@ -63,7 +63,7 @@ export class SignUpComponent extends React.Component {
       {
         onSuccess: (response) => {
           setToken(response.signUp.token);
-          Actions.home();
+          Actions.home(ActionConst.REPLACE);
         },
         onFailure: () => this.setState({error: 'Server error'})
       }
@@ -92,7 +92,7 @@ export class SignUpComponent extends React.Component {
         }
         <Text onPress={this.signUp} style={styles.signInButton} testID={'signInButton'}>Sign Up</Text>
 
-        <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signin()}>sign in</Text></Text>
+        <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signin(ActionConst.REPLACE)}>sign in</Text></Text>
       </View>
     );
   }

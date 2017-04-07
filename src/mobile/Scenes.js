@@ -8,15 +8,18 @@ const scenes = Actions.create(
   <Scene key="root">
     <Scene
       key="signin"
+      type="replace"
       component={SignInScreen}
       title="SignIn"
       initial />
     <Scene
       key="signup"
+      type="replace"
       component={SignUpScreen}
       title="SignUp" />
     <Scene
       key="home"
+      type="replace"
       component={HomeScreen}
       title="Home" />
   </Scene>

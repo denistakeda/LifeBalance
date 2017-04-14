@@ -63,7 +63,7 @@ export class SignUpComponent extends React.Component {
       {
         onSuccess: (response) => {
           setToken(response.signUp.token);
-          Actions.home(ActionConst.REPLACE);
+          Actions.home();
         },
         onFailure: () => this.setState({error: 'Server error'})
       }
@@ -92,7 +92,7 @@ export class SignUpComponent extends React.Component {
         }
         <Text onPress={this.signUp} style={styles.signInButton} testID={'signInButton'}>Sign Up</Text>
 
-        <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signin(ActionConst.REPLACE)}>sign in</Text></Text>
+        <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signin()}>sign in</Text></Text>
       </View>
     );
   }

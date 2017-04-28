@@ -15,7 +15,7 @@ import {
   linkColor,
 } from '../../config/StyleConst';
 import AppRoutes from '../../AppRoutes';
-import SignInMutation from '../../mutations/SignInMutation';
+import SignUpMutation from '../../mutations/SignUpMutation';
 import { setToken } from '../../services/AuthorizationService';
 
 const styles = StyleSheet.create({
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export class SignInComponent extends React.Component {
+export class SignUpComponent extends React.Component {
 
   constructor() {
     super();
@@ -57,15 +57,15 @@ export class SignInComponent extends React.Component {
     this.state = {};
   }
 
-  signIn = () => {
+  signUp = () => {
     this.props.relay.commitUpdate(
-      new SignInMutation({email: this.state.email, password: this.state.password}),
+      new SignUpMutation({email: this.state.email, password: this.state.password}),
       {
         onSuccess: (response) => {
-          setToken(response.signIn.token);
+          setToken(response.signUp.token);
           Actions.home();
         },
-        onFailure: () => this.setState({error: 'Incorrect email and/or password'})
+        onFailure: () => this.setState({error: 'Server error'})
       }
     );
   };
@@ -73,7 +73,7 @@ export class SignInComponent extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Sign In</Text>
+        <Text style={styles.welcome}>Sign Up</Text>
         <TextInput
           style={styles.input}
           onChangeText={email => this.setState({email})}
@@ -90,15 +90,15 @@ export class SignInComponent extends React.Component {
           !!this.state.error &&
           <Text style={styles.errorText}>{this.state.error}</Text>
         }
-        <Text onPress={this.signIn} style={styles.signInButton} testID={'signInButton'}>Sign In</Text>
+        <Text onPress={this.signUp} style={styles.signInButton} testID={'signInButton'}>Sign Up</Text>
 
-        <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signup()}>sign up</Text></Text>
+        <Text>Or you can <Text style={styles.signUp} onPress={() => Actions.signin()}>sign in</Text></Text>
       </View>
     );
   }
 }
 
-const SignInConnected = Relay.createContainer(SignInComponent, {
+const SignUpConnected = Relay.createContainer(SignUpComponent, {
   fragments: {
     viewer: () => Relay.QL`
       fragment on Viewer {
@@ -111,10 +111,10 @@ const SignInConnected = Relay.createContainer(SignInComponent, {
   },
 });
 
-const SignIn = () => (
+const SignUp = () => (
   <Relay.RootContainer
-    Component={SignInConnected}
+    Component={SignUpConnected}
     route={new AppRoutes()} />
 );
 
-export default SignIn;
+export default SignUp;
